@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- First section with background image -->
+    <section class="first-section">
+        <div class="content-wrapper">
+            <nav class="navbar">
+                <div class="nav-left">
+                    <img src="../assets/images/kapwatulong.png" alt="Kapwa Tulong Logo" class="logo">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search" class="search-bar">
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="btn-group">
+                        <a href="#" class="create-btn">CREATE?</a>
+                        <a href="#" class="donate-btn">DONATE</a>
+                    </div>
+                    <a href="#" class="about-btn">About</a>
+                    <!-- Only difference is here - replaced user menu with sign in link -->
+                    <a href="#" class="nav-link">Sign In</a>
+                </div>
+            </nav>
+
+            <section class="hero">
+                <h1>Pawssion Project Foundation</h1>
+                <p>Pawssion Project is a non-profit organization dedicated to rescuing, rehabilitating, and rehoming animals in need. Founded in October 2018, our mission is to create animal-friendly communities that promote kindness to all living creatures. We strive to achieve "The Five Freedoms" for all stray animals through initiatives like daily stray feeding, regular spay and neuter services, and relief efforts during calamities. We believe in the power of compassion and work tirelessly to provide a second chance for abused, abandoned, and neglected animals.</p>
+                <button class="btn btn-donate" id="scrollToSecond">Donate Now</button>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <img src="../assets/images/paw1.jpg" alt="Plant growing in soil">
+                </div>
+                <div class="feature-card">
+                    <img src="../assets/images/paw2.jpg" alt="Plant growing in soil">
+                </div>
+                <div class="feature-card">
+                    <img src="../assets/images/paw3.jpeg" alt="Plant growing in soil">
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Second section -->
+    <section class="second-section" id="second-section">
+        <div class="content-wrapper">
+            <section class="fundraiser">
+                <h2>Test Fundraiser</h2>
+                <div class="fundraiser-content">
+                    <div class="dog-images">
+                        <img src="../assets/images/dog1.png" alt="Dog in field" class="dog-img">
+                        <div class="dog-img-grid">
+                            <img src="../assets/images/dog2.png" alt="Dog running">
+                            <img src="../assets/images/dog3.png" alt="Dog standing">
+                        </div>
+                    </div>
+                    
+                    <div class="fundraiser-info">
+                        <h3>₱1,500 Goal of ₱50,000</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="stats">
+                            <span>₱1,500 raised</span>
+                            <span>1.2k views</span>
+                        </div>
+                        <div class="location-container">
+                            <p>
+                                <img src="../assets/images/location.png" alt="Location" class="location-icon">
+                                Fundraiser is located in Bacolod City and SJDM, Bulacan, Philippines
+                            </p>
+                        </div>
+                        <button class="btn btn-donate" onclick="window.location.href='donation-form.html'">Donate now</button>
+                        <p class="share-text">or share via</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <img src="../assets/images/insta.png" alt="Instagram" class="social-img">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="../assets/images/facebook.png" alt="Facebook" class="social-img">
+                            </a>
+                            <a href="#" class="social-icon">
+                                <img src="../assets/images/twitter.png" alt="Twitter" class="social-img">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer>
+        <div class="content-wrapper">
+            <h3>About</h3>
+            <p>Your generous donation helps create lasting change and supports those in need. Every contribution matters! By you, more children will go to school, together, we can make the world a better place.</p>
+        </div>
+    </footer>
+
+    <!-- Add modal container -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img id="modalImage" src="" alt="Full size image">
+        </div>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

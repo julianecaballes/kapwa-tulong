@@ -1,0 +1,1485 @@
+/* Import Lexend Deca Font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;800&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+/* Full page resolution */
+body {
+    background: #fff;  /* Change main background to white */
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    background: transparent; /* Start with transparent background */
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Style for Navbar Links */
+.nav-right a {
+    text-decoration: none;
+    color: white; /* Revert to white color */
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Add new class for scrolled state */
+nav.scrolled {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white when scrolled */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 5px 40px;
+}
+
+/* Update text color when scrolled */
+nav.scrolled .nav-right a {
+    color: #333; /* Dark text when background is light */
+}
+
+/* Keep donate button white when scrolled */
+nav.scrolled .nav-right .donate-btn {
+    color: white; /* Override the dark text color for donate button */
+}
+
+/* Keep create button styles consistent */
+nav.scrolled .create-btn {
+    background: #117864;
+    color: white !important;
+}
+
+/* Left side of navbar */
+.nav-left {
+    display: flex;
+    align-items: center;
+    position: relative; /* Add this to contain absolute positioned logo */
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    transition: opacity 0.3s ease;
+}
+
+/* Light logo (default) */
+.light-logo {
+    opacity: 1;
+}
+
+.dark-logo {
+    position: absolute;
+    opacity: 0;
+}
+
+/* When scrolled, switch logos */
+nav.scrolled .light-logo {
+    opacity: 0;
+}
+
+nav.scrolled .dark-logo {
+    opacity: 1;
+}
+
+.search-bar {
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 200px;
+    background: white;
+}
+
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+/* Style for Navbar Links */
+.nav-right a {
+    text-decoration: none;
+    color: white; /* Revert to white color */
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Create and Donate Buttons */
+.btn-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Revert create button styles */
+.create-btn {
+    background: white;
+    color: #117864 !important;
+    padding: 10px 20px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.donate-btn {
+    background: #117864;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 5px;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.donate-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px;
+    overflow: hidden;
+}
+
+/* Slideshow Background */
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Dark overlay for better text visibility */
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+}
+
+/* Update hero content to appear above slideshow */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 4; /* Give slightly more space to the left side */
+}
+
+.hero h1 {
+    color: white;
+    font-size: 110px; /* Increased from 80px */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 60px; /* Increased from 40px */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 30px; /* Increased from 20px */
+}
+
+.hero-btn {
+    padding: 15px 60px; /* Increased from 12px 30px */
+
+    border-radius: 5px; /* Increased from 10px */
+    font-size: 20px; /* Increased from 16px */
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn.donate {
+    border: 2px solid #0d5c4d;
+    background: #117864;
+    color: white;
+}
+
+.hero-btn.donate:hover {
+    background: #0d5c4d;
+    transform: translateY(-3px); /* Slightly larger transform */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero-btn.tuklasin {
+    background: white;
+    border: 2px solid gray;
+    color: #117864;
+}
+
+.hero-btn.tuklasin:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right img {
+    width: 600px; /* Increased from 400px */
+    height: auto;
+}
+
+/* Small Section Under First Section */
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #117864;  /* Changed from #626262 to theme green */
+    height: 8vh;
+    width: 100%;
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* Centering Each Box */
+.info-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+    flex: 1;
+}
+
+/* Styling for Icons */
+.info-icon {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+}
+
+/* Middle Dotted Line */
+.info-divider {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+/* Update About section styles */
+.section.About {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.section-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: #fff;  /* Ensure container background is also white */
+}
+
+/* Update text container styles */
+.text-container {
+    flex: 1;
+    padding: 40px 0 40px 80px;  /* Remove right padding, keep left spacing */
+}
+
+.text-container h2 {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: bold;
+    color: #666666;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-left: 0;    /* Remove any default padding */
+}
+
+/* Update image container styles */
+.image-container {
+    flex: 1;
+    overflow: hidden;
+    padding-right: 0;   /* Remove right padding */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Fundraiser Section Styles */
+.fundraiser-section {
+    padding: 40px 0; /* Remove horizontal padding */
+    background: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Update section title container */
+.section-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0; /* Remove padding */
+    gap: 100px;
+}
+
+/* Update section title styles */
+.section-title {
+    font-size: 24px;
+    color: #117864;
+    font-weight: bold;
+    margin: 0;
+    flex: 1; /* Allow title to take up available space */
+}
+
+/* Remove the span color since we don't need it anymore */
+.section-title span {
+    color: inherit; /* Remove specific color for span */
+}
+
+/* Update view all button styles */
+.view-all-btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #117864;
+    background: transparent;
+    border: 2px solid #117864;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.view-all-btn:hover {
+    background: #117864;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Update fundraiser grid to handle padding */
+.fundraiser-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0; /* Remove padding */
+}
+
+/* Add container to align everything */
+.fundraiser-content {
+    max-width: 100%;
+    padding: 0 40px; /* Add padding to the content container instead */
+}
+
+.main-fundraiser {
+    flex: 1;
+    max-width: 50%;
+}
+
+.side-fundraisers {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.fundraiser-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Add overlay for hover effect */
+.fundraiser-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0);
+    transition: background 0.3s ease;
+    pointer-events: none;
+}
+
+.fundraiser-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Darken overlay on hover */
+.fundraiser-card:hover::after {
+    background: rgba(0,0,0,0.3);
+}
+
+.fundraiser-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.fundraiser-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Make text more prominent on hover */
+.fundraiser-card:hover .card-content {
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.fundraiser-card:hover .card-content h3,
+.fundraiser-card:hover .card-content p {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.main-fundraiser .card-content {
+    padding: 20px;
+}
+
+.main-fundraiser .card-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.main-fundraiser .fundraiser-card {
+    height: 500px;
+}
+
+.side-fundraisers .fundraiser-card {
+    height: 240px;
+}
+
+/* Update card content styles for small cards */
+.side-fundraisers .card-content {
+    padding: 15px;
+}
+
+.side-fundraisers .card-content p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Remove different sizes for main and side buttons */
+.main-fundraiser .donate-btn,
+.side-fundraisers .donate-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Update responsive styles */
+@media (max-width: 1400px) {
+    .hero h1 {
+        font-size: 100px;
+    }
+    
+    .hero-btn {
+        padding: 18px 40px;
+        font-size: 20px;
+    }
+    
+    .hero-right img {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 80px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-right img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero-btn {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .hero-right img {
+        width: 300px;
+    }
+}
+
+/* Navigation donate button styles - reverted */
+.nav-right .donate-btn {
+    background: #117864;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    left: -8px;
+    z-index: 1;
+    margin-top: 0;
+    align-self: auto;
+    transition: all 0.3s ease;
+}
+
+.nav-right .donate-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(17, 120, 100, 0.3);
+}
+
+/* Update button colors when scrolled */
+nav.scrolled .create-btn {
+    background: #117864;
+    color: white !important;
+}
+
+nav.scrolled .create-btn:hover {
+    background: #0d5c4d;
+    box-shadow: 0 2px 8px rgba(17, 120, 100, 0.3);
+}
+
+/* Fundraiser section donate button styles - keep new styles */
+.fundraiser-card .donate-btn {
+    background: #117864;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 5px;
+    width: fit-content;
+    align-self: flex-start;
+}
+
+.fundraiser-card .donate-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer-section {
+    width: 100%;
+    background: #fff;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;  /* Add gap between links and logo */
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #117864;
+}
+
+.footer-logo img {
+    height: 60px;  /* Increased from 40px */
+    width: auto;
+    margin-left: 20px;  /* Add some spacing from the links */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-links span {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo img {
+        height: 50px;  /* Slightly smaller on mobile */
+        margin-left: 0;  /* Remove margin on mobile */
+    }
+}
+
+about-header {
+    width: fit-content;
+    margin: 60px auto -20px;
+    padding: 10px 40px;
+    background-color: #117864;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 120vh;
+    text-align: center;
+    background: #fff;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    margin-bottom: 100px;
+}
+
+.about-background {
+    position: absolute;
+    top: 60px;
+    left: 120px;
+    right: 120px;
+    bottom: 60px;
+    z-index: 1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-images {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    width: 100% !important;
+    margin-left: 0% !important;
+}
+
+.work-image {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.work-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.about-text {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-text p {
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 1400px) {
+    .about-background {
+        left: 80px;
+        right: 80px;
+    }
+    
+    .work-images {
+        width: 110%;
+        margin-left: -5%;
+        gap: 0px;
+    }
+
+    .work-image {
+        width: 400px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 30px;
+    }
+
+    .about-background {
+        top: 40px;
+        left: 60px;
+        right: 60px;
+        bottom: 40px;
+    }
+    
+    .work-images {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .work-image {
+        width: 350px;
+        height: 210px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px;
+        min-height: auto;
+        margin-bottom: 60px;
+    }
+
+    .about-background {
+        top: 30px;
+        left: 20px;
+        right: 20px;
+        bottom: 30px;
+    }
+    
+    .work-images {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .work-image {
+        width: 90%;
+        max-width: 350px;
+        height: 210px;
+    }
+
+    .about-title {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .about-text p {
+        font-size: 20px;
+    }
+}
+/* Donation Impact Section */
+.donation-impact {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    background: white;
+    overflow: visible;
+}
+
+.impact-content {
+    max-width: 800px;
+    padding: 0 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.impact-text {
+    font-size: 24px;
+    color: #117864;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.donation-counter {
+    font-size: 72px;
+    font-weight: 800;
+    color: #117864;
+    margin: 30px 0;
+}
+
+.donate-now-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #117864;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.donate-now-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(17, 120, 100, 0.3);
+}
+
+/* Update Scrolling Text */
+.scrolling-text-container {
+    position: relative;
+    width: 100%;
+    height: 240px; /* Increased height to accommodate both lines */
+    overflow: hidden;
+    margin: 40px 0;
+}
+
+/* Fixed backgrounds */
+.scrolling-text-container:before,
+.scrolling-text-container:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px; /* Height for each background strip */
+    transform: rotate(-5deg);
+    z-index: 1;
+}
+
+.scrolling-text-container:before {
+    top: 20px;
+    background: #117864;
+}
+
+.scrolling-text-container:after {
+    bottom: 20px;
+    background: #2ECC71;
+}
+
+.scrolling-text {
+    position: absolute;
+    width: 200%;
+    white-space: nowrap;
+    font-size: 72px;
+    font-weight: 800;
+    padding: 20px 0;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.scrolling-text.top {
+    top: 20px;
+    color: rgba(255, 255, 255, 0.1);
+    animation: scrollText 20s linear infinite;
+}
+
+.scrolling-text.bottom {
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.1);
+    animation: scrollText 20s linear infinite reverse;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0) rotate(-5deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(-5deg);
+    }
+}
+
+/* Update Circle Containers and Images */
+.circle-container {
+    position: absolute;
+    width: 200px; /* Increased from 150px */
+    height: 100%;
+    z-index: 2;
+}
+
+.circle-container.left {
+    left: 180px; /* Adjusted for larger images */
+}
+
+.circle-container.right {
+    right: 180px; /* Adjusted for larger images */
+}
+
+.circle-image {
+    position: absolute;
+    width: 140px; /* Increased from 100px */
+    height: 140px; /* Increased from 100px */
+    border-radius: 50%;
+    border: 4px solid #117864; /* Increased border width */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Enhanced shadow */
+}
+
+/* Left side circles positioning - adjusted for larger size */
+.circle-container.left .circle-image:nth-child(1) {
+    top: 10%;
+    left: 30px;
+}
+
+.circle-container.left .circle-image:nth-child(2) {
+    top: 40%;
+    left: 60px;
+}
+
+.circle-container.left .circle-image:nth-child(3) {
+    top: 70%;
+    left: 20px;
+}
+
+/* Right side circles positioning - adjusted for larger size */
+.circle-container.right .circle-image:nth-child(1) {
+    top: 10%;
+    right: 20px;
+}
+
+.circle-container.right .circle-image:nth-child(2) {
+    top: 40%;
+    right: 60px;
+}
+
+.circle-container.right .circle-image:nth-child(3) {
+    top: 70%;
+    right: 30px;
+}
+
+.circle-image:hover {
+    transform: scale(1.15); /* Increased scale effect */
+    z-index: 3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+    .circle-container.left {
+        left: 140px;
+    }
+    
+    .circle-container.right {
+        right: 140px;
+    }
+    
+    .circle-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .circle-container.left {
+        left: 100px;
+    }
+    
+    .circle-container.right {
+        right: 100px;
+    }
+    
+    .circle-image {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .circle-container.left {
+        left: 80px;
+    }
+    
+    .circle-container.right {
+        right: 80px;
+    }
+    
+    .circle-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Update Categories Section */
+.categories-section {
+    position: relative;
+    padding: 80px 0;
+    background: white;
+    overflow: hidden;
+    max-width: 1200px; /* Reduced from 1400px */
+    margin: 0 auto;
+}
+
+.categories-background {
+    position: absolute;
+    top: 40px;
+    left: 40px; /* Add margin back */
+    right: 40px; /* Add margin back */
+    bottom: 40px;
+    z-index: 1;
+}
+
+.category-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.categories-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px; /* Reduced from 60px */
+    position: relative;
+    z-index: 2;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Reduced from 60px */
+    max-width: 1000px; /* Reduced width for content */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 60px;
+}
+
+.category-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Reduced from 30px */
+    align-items: flex-start;
+}
+
+.category-btn {
+    background: none;
+    color: white;
+    border: none;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    text-decoration: none;
+}
+
+.category-btn:hover {
+    transform: translateX(10px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.category-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.category-btn:hover::after {
+    width: 100%;
+}
+
+/* Update responsive styles */
+@media (max-width: 1200px) {
+    .categories-section {
+        padding: 60px 20px;
+    }
+    
+    .categories-grid {
+        gap: 30px; /* Further reduce gap on smaller screens */
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories-section {
+        padding: 40px 20px;
+    }
+    
+    .categories-background {
+        top: 20px;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+    }
+    
+    .categories-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Add smooth scrolling to html */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add styles for nav links */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Update scrolled state for nav links */
+nav.scrolled .nav-link {
+    color: #333;
+}
+
+nav.scrolled .nav-link:hover {
+    text-shadow: none;
+    color: #117864;
+}
+
+.about-header {
+    width: fit-content;
+    margin: 60px auto -20px;
+    padding: 10px 40px;
+    background-color: #117864;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 120vh;
+    text-align: center;
+    background: #fff;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    margin-bottom: 100px;
+}
+
+.about-title {
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.work-images {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    width: 120%;
+    margin-left: -10%;
+}
+
+.work-image {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-text {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-text p {
+    color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust responsive behavior */
+@media (max-width: 1400px) {
+    .work-images {
+        width: 110%;
+        margin-left: -5%;
+        gap: 0px;
+    }
+
+    .work-image {
+        width: 400px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .work-images {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .work-image {
+        width: 350px;
+        height: 210px;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-images {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .work-image {
+        width: 90%;
+        max-width: 350px;
+        height: 210px;
+    }
+
+    .about-title {
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+    .about-text p {
+        font-size: 20px;
+    }
+}
+
+/* Toast Notification Styles */
+.toast {
+    visibility: hidden;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: #117864;
+    color: white;
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-align: center;
+    min-width: 320px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Add animation for the toast text */
+@keyframes toastPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    animation: toastPulse 1s ease infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .toast {
+        width: 90%;
+        min-width: auto;
+        margin: 0 auto;
+        bottom: 30px;
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Page Transition Styles */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #117864;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition.active {
+    transform: translateY(0);
+}

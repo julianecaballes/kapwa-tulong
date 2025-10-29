@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/account-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="../assets/images/kapwadark.png" alt="Kapwa Tulong Logo" class="sidebar-logo">
+                </div>
+                <a href="index.html" class="back-link">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Overview
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    Campaigns
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    Donations
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+            <a href="#" class="logout-link">
+                <svg class="logout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                Logout
+            </a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Welcome back, User!</h1>
+                <p class="date" id="currentDate"></p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Total Donations</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">₱1,234</div>
+                        <p class="stat-detail">+20.1% from last month</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Active Campaigns</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">12</div>
+                        <p class="stat-detail">+2 new this month</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Success Rate</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.4 8l-6.8 6.8-3.2-3.2"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">85%</div>
+                        <p class="stat-detail">+2.5% from last month</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Total Impact</h3>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2v20M2 12h20"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat">2.4K</div>
+                        <p class="stat-detail">+19 people helped this month</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tabs-list">
+                    <button class="tab-trigger active" data-tab="campaigns">My Campaigns</button>
+                    <button class="tab-trigger" data-tab="donations">My Donations</button>
+                </div>
+
+                <div class="tab-content active" id="campaigns">
+                    <div class="table-header">
+                        <h2>Recent Campaigns</h2>
+                        <a href="create_campaign.html" class="create-button">
+                            <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                            Create Campaign
+                        </a>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Goal</th>
+                                    <th>Raised</th>
+                                    <th>Status</th>
+                                    <th>End Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Save the Ocean</td>
+                                    <td>₱10,000</td>
+                                    <td>₱8,500</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>2024-04-01</td>
+                                    <td><button class="view-button">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Education for All</td>
+                                    <td>₱5,000</td>
+                                    <td>₱3,200</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>2024-03-15</td>
+                                    <td><button class="view-button">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Food Bank Support</td>
+                                    <td>₱2,000</td>
+                                    <td>₱2,000</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>2024-02-28</td>
+                                    <td><button class="view-button">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="donations">
+                    <div class="table-header">
+                        <h2>Recent Donations</h2>
+                        <button class="download-button">
+                            <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download Report
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Save the Ocean</td>
+                                    <td>₱100</td>
+                                    <td>2024-02-28</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td><button class="view-button">View Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Education for All</td>
+                                    <td>₱50</td>
+                                    <td>2024-02-25</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td><button class="view-button">View Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Food Bank Support</td>
+                                    <td>₱75</td>
+                                    <td>2024-02-20</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td><button class="view-button">View Receipt</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/account-scripts.js"></script>
+    <script>
+        // Format and display the current date
+        function formatDate() {
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            const today = new Date();
+            document.getElementById('currentDate').textContent = 'Today is ' + today.toLocaleDateString('en-US', options);
+        }
+        
+        // Call formatDate when the page loads
+        document.addEventListener('DOMContentLoaded', formatDate);
+    </script>
+</body>
+</html> 

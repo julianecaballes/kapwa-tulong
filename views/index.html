@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapwa Tulong</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+    <div class="toast" id="loginToast">Log in to make a difference!</div>
+    <div class="page-transition"></div>
+
+    <nav>
+        <div class="nav-left">
+            <img src="../assets/images/kapwatulong.png" alt="Kapwa Tulong Logo" class="logo light-logo">
+            <img src="../assets/images/kapwadark.png" alt="Kapwa Tulong Logo Dark" class="logo dark-logo">
+        </div>
+        <div class="nav-right">
+            <div class="btn-group">
+                <a href="../backend/auth/login_signup.php" class="create-btn">CREATE?</a>
+                <a href="#" class="donate-btn">DONATE</a>
+            </div>
+            <a href="#about-section" class="nav-link">About</a>
+            <a href="../backend/auth/login_signup.php">Sign In</a>
+
+        </div>
+    </nav>
+
+ 
+    <section class="hero">
+        <div class="slideshow-container">
+            <div class="slide" style="background-image: url('../assets/images/work3.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/work2.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/work1.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/paw3.jpeg')"></div>
+            <div class="slide" style="background-image: url('../assets/images/girl.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/farming.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/c5.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/c4.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/c3.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/c2.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/c1.png')"></div>
+            <div class="slide" style="background-image: url('../assets/images/navpic.png')"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>Tara,<br>donate tayo!</h1>
+                <div class="hero-buttons">
+                    <a href="#fundraiser-section" class="hero-btn donate">Donate</a>
+                    <a href="#about-section" class="hero-btn tuklasin">Tuklasin</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="../assets/images/kapwatulongcircle.png" alt="Kapwa Tulong Circle Logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-box">
+            <img src="../assets/images/donate.png" alt="Donate Icon" class="info-icon">
+            <p>Madaling paraan ng pagbibigay-donasyon para sa iyong komunidad</p>
+        </div>
+        
+        <p class="info-divider">...................</p>
+        
+        <div class="info-box">
+            <img src="../assets/images/helping.png" alt="Helping Icon" class="info-icon">
+            <p>Mabisang paraan ng paghingi ng suporta mula sa iyong komunidad</p>
+        </div>
+    </section>
+
+    <div class="about-header" id="about-section">About Us</div>
+
+    <section class="about-section">
+        <div class="about-background">
+            <img src="../assets/images/gradient.png" alt="Background" class="background-image">
+        </div>
+        <h2 class="about-title">PAANO KAMI GUMAGANA?</h2>
+        <div class="work-images">
+            <img src="../assets/images/work1.png" alt="Work 1" class="work-image">
+            <img src="../assets/images/work2.png" alt="Work 2" class="work-image">
+            <img src="../assets/images/work3.png" alt="Work 3" class="work-image">
+        </div>
+        <div class="about-text">
+            <p>With Kapwa Tulong Community, donating or requesting support is simple and secure. Find fundraisers that align with your cause and contribute with just a few clicks. Our streamlined process ensures that help reaches those who need it most.</p>
+            <p>If you need support, create a fundraiser, share your story, and connect with your community. KapwaTulong makes it easy to raise funds and gather help quickly—because together, no challenge is too great.</p>
+        </div>
+    </section>
+
+    <section class="fundraiser-section" id="fundraiser-section">
+        <div class="fundraiser-content">
+            <div class="section-title-container">
+                <h2 class="section-title">
+                    Tuklasin ang mga fundraiser na alinsunod sa iyong malasakit
+                </h2>
+                <a href="#" class="view-all-btn" onclick="handleViewAll()">View All ></a>
+            </div>
+            <div class="fundraiser-grid">
+                <div class="main-fundraiser">
+                    <div class="fundraiser-card">
+                        <img src="../assets/images/fdog.png" alt="Save the Wild Dogs">
+                        <div class="card-content">
+                            <h3>Save the Wild: Protecting Endangered Species</h3>
+                            <button class="donate-btn small" onclick="handleDonateClick()">Donate Now ></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-fundraisers">
+                    <div class="fundraiser-card small">
+                        <img src="../assets/images/fpatient.png" alt="Medical Support">
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <button class="donate-btn" onclick="handleDonateClick()">Donate Now ></button>
+                        </div>
+                    </div>
+                    <div class="fundraiser-card small">
+                        <img src="../assets/images/fpatient2.png" alt="Hospital Care">
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <button class="donate-btn" onclick="handleDonateClick()">Donate Now ></button>
+                        </div>
+                    </div>
+                    <div class="fundraiser-card small">
+                        <img src="../assets/images/farming.png" alt="Community Farming">
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            <button class="donate-btn">Donate Now ></button>
+                        </div>
+                    </div>
+                    <div class="fundraiser-card small">
+                        <img src="../assets/images/slums.png" alt="COVID-19 Relief">
+                        <div class="card-content">
+                            <p>Assisting Local Hospitals with COVID-19 Relief</p>
+                            <button class="donate-btn">Donate Now ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-impact">
+        <div class="circle-container left">
+            <img src="../assets/images/c1.png" alt="Circle 1" class="circle-image">
+            <img src="../assets/images/c2.png" alt="Circle 2" class="circle-image">
+            <img src="../assets/images/c3.png" alt="Circle 3" class="circle-image">
+        </div>
+
+        <div class="impact-content">
+            <p class="impact-text">Ang iyong donasyon ay maaaring magbigay-liwanag sa kinabukasan ng mga nangangailangan—tara, gumawa tayo ng pagbabago nang magkasama!</p>
+            <div class="donation-counter">+<span id="counter">10,203,290</span></div>
+            <a href="#" class="donate-now-btn">DONATE NOW</a>
+        </div>
+
+        <div class="circle-container right">
+            <img src="../assets/images/c4.png" alt="Circle 4" class="circle-image">
+            <img src="../assets/images/c5.png" alt="Circle 5" class="circle-image">
+            <img src="../assets/images/c6.png" alt="Circle 6" class="circle-image">
+        </div>
+    </section>
+
+    <div class="scrolling-text-container">
+        <div class="scrolling-text top" data-text="LET'S HELP EACH OTHER * LET'S HELP EACH OTHER * LET'S HELP EACH OTHER *">
+            LET'S HELP EACH OTHER * LET'S HELP EACH OTHER * LET'S HELP EACH OTHER *
+        </div>
+        <div class="scrolling-text bottom" data-text="MAGTULUNGAN TAYO * MAGTULUNGAN TAYO * MAGTULUNGAN TAYO *">
+            MAGTULUNGAN TAYO * MAGTULUNGAN TAYO * MAGTULUNGAN TAYO *
+        </div>
+    </div>
+
+    <section class="categories-section">
+        <div class="categories-background">
+            <img src="../assets/images/categorybg.png" alt="Categories Background" class="category-bg-image">
+        </div>
+        <h2 class="categories-title">Categories</h2>
+        <div class="categories-grid">
+            <div class="category-column">
+                <button class="category-btn">Education</button>
+                <button class="category-btn">Health</button>
+                <button class="category-btn">Disaster</button>
+            </div>
+            <div class="category-column">
+                <button class="category-btn">Animal</button>
+                <button class="category-btn">Environment</button>
+                <button class="category-btn">Community</button>
+            </div>
+            <div class="category-column">
+                <button class="category-btn">Children</button>
+                <button class="category-btn">Mental Health</button>
+                <button class="category-btn">Elderly</button>
+            </div>
+            <div class="category-column">
+                <button class="category-btn">Hunger</button>
+                <button class="category-btn">Housing</button>
+                <button class="category-btn">More</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add scroll event listener
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        function animateCounter() {
+            const counter = document.getElementById('counter');
+            const target = 10203290;
+            const duration = 2000; // 2 seconds
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            
+            let current = start;
+            
+            function updateCounter() {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target.toLocaleString();
+                    return;
+                }
+                counter.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateCounter);
+            }
+            
+            updateCounter();
+        }
+
+        // Start counter animation when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.donation-counter'));
+
+        // Slideshow functionality
+        function startSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            
+            // Set first slide as active
+            slides[0].classList.add('active');
+            
+            setInterval(() => {
+                // Remove active class from current slide
+                slides[currentSlide].classList.remove('active');
+                
+                // Move to next slide
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                // Add active class to new slide
+                slides[currentSlide].classList.add('active');
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        // Start slideshow when page loads
+        window.addEventListener('load', startSlideshow);
+
+        // Donate button handler with smooth transition
+        function handleDonateClick() {
+            const toast = document.getElementById('loginToast');
+            const transition = document.querySelector('.page-transition');
+            
+            toast.textContent = 'Log in to start making a difference!';
+            toast.classList.add('show');
+            
+            // Hide toast and trigger page transition after 2 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                transition.classList.add('active');
+                
+                // Redirect after transition starts
+                setTimeout(() => {
+                    window.location.href = '../backend/auth/login_signup.php';
+                }, 500);
+            }, 2000);
+        }
+
+        // View All button handler with smooth transition
+        function handleViewAll() {
+            const toast = document.getElementById('loginToast');
+            const transition = document.querySelector('.page-transition');
+            
+            toast.textContent = 'Log in to explore all fundraisers!';
+            toast.classList.add('show');
+            
+            // Hide toast and trigger page transition after 2 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                transition.classList.add('active');
+                
+                // Redirect after transition starts
+                setTimeout(() => {
+                    window.location.href = '../backend/auth/login_signup.php';
+                }, 500);
+            }, 2000);
+        }
+    </script>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-links">
+                <span>© 2025 KapwaTulong Community</span>
+                <a href="#">Terms</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Legal</a>
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-logo">
+                <img src="../assets/images/footerlogo.png" alt="Footer Logo">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

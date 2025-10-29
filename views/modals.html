@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/modal-styles.css">
+</head>
+<body>
+    <!-- Demo Controls -->
+    <div class="container">
+        <div class="demo-controls">
+            <button class="button button-primary" onclick="showModal()">Show Submission Modal</button>
+            <button class="button button-primary" onclick="showView('review')">Show Review Status</button>
+            <button class="button button-primary" onclick="showView('approved')">Show Approved View</button>
+            <button class="button button-primary" onclick="showView('rejected')">Show Rejected View</button>
+        </div>
+
+        <!-- Submission Modal -->
+        <div id="submissionModal" class="modal">
+            <div class="modal-content">
+                <div class="success-icon">✓</div>
+                <h2 class="text-lg font-bold">Campaign Submitted!</h2>
+                <p class="text-muted">Your campaign has been submitted for approval! Our team will review your request shortly.</p>
+                <div class="space-y">
+                    <button class="button button-primary button-full" onclick="showView('review'); hideModal()">View Campaign Status</button>
+                    <button class="button button-outline button-full" onclick="hideModal()">Back to Dashboard</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Status View -->
+        <div id="reviewView" class="card">
+            <h2 class="text-lg font-bold">Campaign Status</h2>
+            <p class="text-muted">Track your campaign approval progress</p>
+
+            <div class="stepper">
+                <div class="stepper-line">
+                    <div class="stepper-progress"></div>
+                </div>
+                <div class="stepper-items">
+                    <div class="stepper-item">
+                        <div class="stepper-circle completed">1</div>
+                        <span>Submitted</span>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="stepper-circle active">2</div>
+                        <span>Under Review</span>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="stepper-circle">3</div>
+                        <span>Decision</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <h3 class="font-bold">Under Review</h3>
+                <p>We're reviewing your campaign to ensure it aligns with our guidelines. Approval may take 24-48 hours.</p>
+            </div>
+        </div>
+
+        <!-- Approved View -->
+        <div id="approvedView" class="card">
+            <h2 class="text-lg font-bold">Campaign Approved! 🎉</h2>
+            <p class="text-muted">Your campaign is now live and ready to accept donations.</p>
+
+            <div class="space-y">
+                <div>
+                    <h3>Share your campaign</h3>
+                    <div class="social-buttons">
+                        <button class="social-button">fb</button>
+                        <button class="social-button">tw</button>
+                        <button class="social-button">in</button>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" class="input" value="https://example.com/campaign/123" readonly>
+                    <button class="button button-outline" onclick="copyLink()">Copy</button>
+                </div>
+
+                <div class="flex justify-between">
+                    <button class="button button-outline">Track Donations</button>
+                    <button class="button button-primary">Edit Campaign</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rejected View -->
+        <div id="rejectedView" class="card">
+            <div class="error-icon">✕</div>
+            <h2 class="text-lg font-bold text-center">Campaign Needs Updates</h2>
+            <p class="text-muted text-center">We found some items that need to be addressed before your campaign can go live.</p>
+
+            <div class="space-y">
+                <div class="alert alert-error">
+                    <h3 class="font-bold">Incomplete Information</h3>
+                    <p>Please provide more details about your campaign goals and how funds will be used.</p>
+                </div>
+                <div class="alert alert-error">
+                    <h3 class="font-bold">Missing Documentation</h3>
+                    <p>Required verification documents are missing or unclear.</p>
+                </div>
+                <button class="button button-primary button-full">Edit and Resubmit Campaign</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/modal-scripts.js"></script>
+</body>
+</html> 

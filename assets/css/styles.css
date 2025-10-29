@@ -1,0 +1,1121 @@
+/* ===== Start of Global Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    min-width: 1024px;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: transparent;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    animation: none !important;
+    max-width: none !important;
+    transform: none !important;
+}
+
+.navbar * {
+    animation: none !important;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.light-logo {
+    opacity: 1;
+}
+
+.dark-logo {
+    position: absolute;
+    opacity: 0;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.navbar.scrolled .light-logo {
+    opacity: 0;
+}
+
+.navbar.scrolled .dark-logo {
+    opacity: 1;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: -10px;
+}
+
+.create-btn, .donate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+.create-btn {
+    color: #117864 !important;
+    margin-right: -8px;
+    z-index: 2;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+    background: #f0f0f0;
+}
+
+.donate-btn {
+    background: #117864;
+    color: white !important;
+    font-size: 16px !important;
+    border: none;
+    z-index: 1;
+}
+
+.donate-btn:hover {
+    transform: translateY(-2px);
+    background: #0d5c4d;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-link {
+    color: #333 !important;
+}
+
+.navbar.scrolled .nav-link:hover {
+    color: #117864 !important;
+}
+
+.navbar.scrolled .create-btn {
+    background: #117864;
+    color: white !important;
+}
+
+.navbar.scrolled .create-btn:hover {
+    background: #0d5c4d;
+}
+
+.navbar.scrolled .donate-btn {
+    background: #117864;
+    color: white !important;
+}
+
+.navbar.scrolled .donate-btn:hover {
+    background: #0d5c4d;
+}
+
+.navbar .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+/* ===== End of Global Styles ===== */
+
+/* ===== Start of First Section Styles ===== */
+.first-section {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7) 85%,
+        rgba(0, 0, 0, 0.95) 95%,
+        rgba(0, 0, 0, 0.95) 100%
+    ), url('../images/girl.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-section .content-wrapper {
+    max-width: var(--max-width);
+    min-width: 1024px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Start of Navigation Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: transparent;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: var(--max-width);
+}
+
+/* Navigation Components */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 200px;
+    background: white;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.create-btn {
+    background: white;
+    color: #117864 !important;
+    padding: 10px 20px;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.about-btn {
+    margin-right: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.user-menu {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-icon i {
+    color: #117864;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    min-width: 200px;
+    z-index: 1000;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #117864; /* Match the theme color */
+    padding-left: 25px; /* Slight indent on hover */
+}
+
+.user-menu:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-menu:hover .dropdown-menu a {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.dropdown-menu a:nth-child(1) { transition-delay: 0.1s; }
+.dropdown-menu a:nth-child(2) { transition-delay: 0.15s; }
+.dropdown-menu a:nth-child(3) { transition-delay: 0.2s; }
+.dropdown-menu a:nth-child(4) { transition-delay: 0.25s; }
+.dropdown-menu a:nth-child(5) { transition-delay: 0.3s; }
+.dropdown-menu a:nth-child(6) { transition-delay: 0.35s; }
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+}
+
+.user-menu:hover .dropdown-menu {
+    display: block;
+}
+
+/* Update nav-link to match about-btn styling */
+.nav-right .nav-link {
+    margin-right: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.nav-right .nav-link:hover {
+    color: #f0f0f0;
+    transition: all 0.2s ease;
+}
+/* End of Navigation Styles */
+
+/* Start of Hero Styles */
+.hero {
+    min-height: 500px;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 180px 40px 40px;
+    margin-left: 5px;
+    background-color: transparent;
+}
+
+.hero h1, .hero p, .hero button {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-left: 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    animation-delay: 0.3s;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    animation-delay: 0.5s;
+}
+
+.hero button.btn-donate {
+    margin-top: 20px;
+    animation-delay: 0.7s;
+}
+/* End of Hero Styles */
+
+/* Features styles - part of first section */
+.features {
+    display: flex;
+    gap: 1rem;
+    padding: 40px;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    background-color: transparent;
+    max-width: var(--content-width);
+    margin: auto auto 0;
+    animation-delay: 0.9s;
+}
+
+.feature-card {
+    flex: 1;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: none;
+}
+
+/* Add modal styles */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal.active .close-modal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.close-modal:hover {
+    color: #117864;
+    transform: scale(1.1);
+}
+/* ===== End of First Section Styles ===== */
+
+/* ===== Start of Second Section Styles ===== */
+.second-section {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.second-section .content-wrapper {
+    max-width: var(--max-width);
+    min-width: 1024px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.second-section h2 {
+    margin-left: 30px;
+    margin-bottom: 2rem;
+}
+
+.fundraiser {
+    padding: 2rem;
+    animation-delay: 1.1s;
+}
+
+.fundraiser-content {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: flex-start;
+}
+
+.dog-images {
+    flex: 2;
+    display: flex;
+    gap: 1rem;
+}
+
+.dog-img {
+    flex: 2;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dog-img-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.dog-img-grid img {
+    width: 100%;
+    height: calc((450px - 1rem) / 2);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.fundraiser-info {
+    flex: 1;
+    background-color: white;
+    padding: 24px;
+    border-radius: 10px;
+    color: #333;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    color: #666;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+    width: 100%;
+}
+
+.location-container {
+    padding: 1rem 0;
+    border-bottom: 2px solid #d0d0d0;
+    width: 100%;
+}
+
+.location-container p {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 16px;
+}
+
+.location-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.fundraiser-info .btn.btn-donate {
+    margin: 24px auto;
+    max-width: 80%;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 18px;
+    padding: 16px 32px;
+}
+
+.share-text {
+    color: #666;
+    text-align: center;
+    margin: 16px 0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.social-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+/* ===== End of Second Section Styles ===== */
+
+
+
+/* ===== Start of Footer Styles ===== */
+footer {
+    width: 100%;
+    background-color: #111;
+}
+
+footer .content-wrapper {
+    max-width: var(--max-width);
+    min-width: 1024px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+footer h3, 
+footer p {
+    margin-left: 25px;
+    font-size: 16px;
+    max-width: 800px;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+/* ===== End of Footer Styles ===== */
+
+/* ===== Start of Media Queries ===== */
+@media (max-width: 768px) {
+    .fundraiser-content {
+        flex-direction: column;
+    }
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-card {
+        width: 100%;
+    }
+}
+/* ===== End of Media Queries ===== */
+
+/* ===== Start of Donation Page Styles ===== */
+.donation-page {
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ), url('../images/heart.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 80px; /* Add space for fixed navbar */
+}
+
+.donation-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.donation-content {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    color: #333;
+}
+
+.return-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #117864;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    transform: translateX(-5px);
+}
+
+.fundraiser-info-header {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.fundraiser-thumbnail {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.fundraiser-text h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.fundraiser-text p {
+    color: #666;
+}
+
+.amount-section {
+    margin-bottom: 32px;
+}
+
+.amount-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.amount-input {
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.amount-input:focus-within {
+    border-color: #117864;
+    background: #e6f3f1;
+}
+
+.peso-sign {
+    color: #666;
+    margin-right: 8px;
+}
+
+.amount-field {
+    background: none;
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    outline: none;
+    color: #333;
+}
+
+.payment-section {
+    margin-bottom: 24px;
+}
+
+.payment-section h3 {
+    margin-bottom: 16px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.payment-option {
+    position: relative;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.payment-option input[type="radio"]:checked + .payment-content {
+    background: #e6f3f1;
+    border-color: #117864;
+}
+
+.payment-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.payment-option img {
+    height: 24px;
+    width: auto;
+}
+
+.anonymous-option {
+    margin-bottom: 24px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 24px 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.total-amount {
+    font-size: 20px;
+}
+
+.donate-now-btn {
+    width: 100%;
+    max-width: 400px; /* Control maximum width */
+    margin: 0 auto;
+    display: block; /* Center the button */
+    background: #117864;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.donate-now-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 120, 100, 0.2);
+}
+
+/* Add these base styles */
+:root {
+    --max-width: 1536px;
+    --content-width: 1400px;
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust scroll position to account for fixed navbar */
+#second-section {
+    scroll-margin-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+/* Add these progress bar styles */
+.progress-container {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 50%; /* This will be dynamically set based on progress */
+    height: 10px;
+    background-color: #117864;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Update fundraiser info styles */
+.fundraiser-info h3 {
+    margin-bottom: 10px;
+}
+
+.stats {
+    margin-top: 5px;
+}
+
+/* Optional: make the lines slightly darker */
+.stats, .location-container {
+    border-color: #d0d0d0; /* Slightly darker color for better visibility */
+}
+
+/* Update location icon styles */
+.location-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.location-container p {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Update social icon styles */
+.social-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+/* Add hover effects to all donate buttons */
+.btn-donate:hover {
+    background: #0d5c4d; /* Darker shade of the original color */
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(17, 120, 100, 0.3);
+}
+
+/* Specific hover effect for navbar buttons */
+.create-btn:hover {
+    background: #f0f0f0; /* Slightly darker white */
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+.donate-btn:hover {
+    background: #0d5c4d;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(17, 120, 100, 0.3);
+}
+
+/* Update the fundraiser donate button hover */
+.fundraiser-info .btn.btn-donate:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(17, 120, 100, 0.3);
+    width: 80%; /* Keep the width consistent on hover */
+}
+
+/* Add fade-in animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add loading animation classes */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Add different delays for different sections */
+.hero h1 {
+    animation-delay: 0.3s;
+}
+
+.hero p {
+    animation-delay: 0.5s;
+}
+
+.hero button {
+    animation-delay: 0.7s;
+}
+
+.features {
+    animation-delay: 0.9s;
+}
+
+.fundraiser-content {
+    animation-delay: 1.1s;
+}
+
+/* Update the donate button styles */
+.btn.btn-donate {
+    background: #117864;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn.btn-donate:hover {
+    background: #0d5c4d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 120, 100, 0.2);
+}
+
+/* Update fundraiser info section */
+.fundraiser-info {
+    padding: 24px;
+}
+
+.fundraiser-info .btn.btn-donate {
+    margin: 24px 0;
+    max-width: 300px; /* Or your preferred width */
+}
+
+/* Share text styling */
+.share-text {
+    color: #666;
+    text-align: center;
+    margin: 16px 0;
+    font-size: 14px;
+}
+
+/* Progress bar colors to match theme */
+.progress-bar {
+    background-color: #117864;
+}
+
+.progress-container {
+    margin: 20px 0;
+}

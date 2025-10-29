@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="donation-page">
+    <!-- Add Navigation Bar -->
+    <nav class="navbar">
+        <div class="content-wrapper">
+            <div class="nav-left">
+                <img src="../assets/images/kapwatulong.png" alt="Kapwa Tulong Logo" class="logo light-logo">
+                <img src="../assets/images/kapwadark.png" alt="Kapwa Tulong Logo Dark" class="logo dark-logo">
+            </div>
+            <div class="nav-right">
+                <a href="#categories-section" class="nav-link">Categories</a>
+                <a href="#about-section" class="nav-link">About</a>
+                <a href="#contact-section" class="nav-link">Contact Us</a>
+                <div class="btn-group">
+                    <a href="../views/create_campaign.html" class="create-btn">CREATE?</a>
+                    <a href="../views/donation.html" class="donate-btn">DONATE</a>
+                </div>
+                <div class="user-menu">
+                    <div class="user-icon">
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="account.php">Account</a>
+                        <a href="notification.php">Notification</a>
+                        <a href="receipt.php">Receipt History</a>
+                        <a href="manage.php">Manage Account</a>
+                        <a href="settings.php">Settings</a>
+                        <a href="logout.php">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="donation-container">
+        <div class="donation-content">
+            <button class="return-btn" onclick="window.location.href='donation.html'">
+                <i class='bx bx-arrow-back'></i>
+                Return to Fundraiser
+            </button>
+
+            <div class="fundraiser-info-header">
+                <img src="../assets/images/dog1.png" alt="Fundraiser Image" class="fundraiser-thumbnail">
+                <div class="fundraiser-text">
+                    <h2>You are supporting Test Fundraiser</h2>
+                    <p>Your donation will support LeBron James</p>
+                </div>
+            </div>
+
+            <div class="donation-form">
+                <div class="amount-section">
+                    <label>Enter your donation amount</label>
+                    <div class="amount-input">
+                        <span class="peso-sign">₱</span>
+                        <input type="text" 
+                               value="1500.00" 
+                               class="amount-field" 
+                               id="amountInput"
+                               oninput="validateAmount(this)"
+                               onchange="updateTotal(this.value)">
+                    </div>
+                </div>
+
+                <div class="payment-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="gcash" checked>
+                            <div class="payment-content">
+                                <img src="../assets/images/gcash.png" alt="GCash">
+                                <span>GCash</span>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="paypal">
+                            <div class="payment-content">
+                                <img src="../assets/images/paypal.png" alt="PayPal">
+                                <span>PayPal</span>
+                            </div>
+                        </label>
+                        
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <div class="payment-content">
+                                <img src="../assets/images/credit.png" alt="Credit/Debit">
+                                <span>Credit/Debit</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="anonymous-option">
+                    <label class="checkbox-label">
+                        <input type="checkbox">
+                        <span>Donate Anonymously</span>
+                        <i class='bx bx-info-circle'></i>
+                    </label>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="total-section">
+                    <div class="total-row">
+                        <span>Total Due Today</span>
+                        <span class="total-amount">₱ 1500.00</span>
+                    </div>
+                </div>
+
+                <button class="donate-now-btn">Donate now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Donation Receipt Popup -->
+    <div class="donation-receipt-popup" id="donationReceiptPopup">
+        <div class="receipt-content">
+            <img src="../assets/images/kapwatulong.png" alt="Kapwa Tulong Logo" class="receipt-logo">
+            <h2>Thank You for Your Generosity!</h2>
+            
+            <div class="donor-info">
+                <p>Your generous donation has made a difference! Below are the details of your transaction:</p>
+            </div>
+
+            <div class="donation-details">
+                <h3>Donation Details</h3>
+                <div class="detail-row">
+                    <span>Donation Amount:</span>
+                    <span id="receiptAmount">₱ 0.00</span>
+                </div>
+                <div class="detail-row">
+                    <span>Campaign Name:</span>
+                    <span>Test Fundraiser</span>
+                </div>
+                <div class="detail-row">
+                    <span>Campaign Organizer:</span>
+                    <span>LeBron James</span>
+                </div>
+                <div class="detail-row">
+                    <span>Date of Donation:</span>
+                    <span id="donationDate"></span>
+                </div>
+                <div class="detail-row">
+                    <span>Transaction ID:</span>
+                    <span id="transactionId"></span>
+                </div>
+            </div>
+
+            <div class="organizer-message">
+                <h3>Message from the Campaign Organizer:</h3>
+                <p>"Thank you for your support! Your contribution will go a long way in making a positive impact."</p>
+            </div>
+
+            <div class="receipt-footer">
+                <button class="continue-btn" onclick="window.location.href='../backend/home.html'">Continue</button>
+                <button class="view-history-btn" onclick="window.location.href='receipt_history.php'">View Receipt History</button>
+            </div>
+
+            <p class="receipt-note">This receipt is auto-generated and does not require a signature.</p>
+            <p class="copyright">Copyright © 2025 Kapwa-Tulong Com.</p>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Amount validation and formatting
+        function validateAmount(input) {
+            // Store cursor position
+            let cursorPosition = input.selectionStart;
+            let oldLength = input.value.length;
+            
+            // Remove existing commas and non-numeric characters except decimal
+            let value = input.value.replace(/,/g, '').replace(/[^\d.]/g, '');
+            
+            // Ensure only one decimal point
+            const parts = value.split('.');
+            if (parts.length > 2) {
+                value = parts[0] + '.' + parts.slice(1).join('');
+            }
+            
+            // Limit to two decimal places
+            if (parts.length > 1) {
+                value = parts[0] + '.' + parts[1].slice(0, 2);
+            }
+
+            // Add commas to the whole number part
+            if (parts[0]) {
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            // Reconstruct the value
+            value = parts.join('.');
+            
+            // Update input value
+            input.value = value;
+            
+            // Adjust cursor position for added commas
+            let newLength = input.value.length;
+            cursorPosition += (newLength - oldLength);
+            input.setSelectionRange(cursorPosition, cursorPosition);
+            
+            // Update total
+            updateTotal(value);
+        }
+
+        // Update total amount
+        function updateTotal(amount) {
+            const totalAmount = document.querySelector('.total-amount');
+            // Remove commas for calculation
+            const numericAmount = amount.replace(/,/g, '');
+            // Format amount with commas and two decimal places
+            const formattedAmount = parseFloat(numericAmount || 0).toFixed(2);
+            const withCommas = formattedAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            totalAmount.textContent = `₱ ${withCommas}`;
+        }
+
+        // Initialize total with default amount
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultAmount = document.getElementById('amountInput').value;
+            // Format the initial value with commas
+            const formattedDefault = parseFloat(defaultAmount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.getElementById('amountInput').value = formattedDefault;
+            updateTotal(formattedDefault);
+        });
+
+        // Update the donate button click handler
+        document.querySelector('.donate-now-btn').addEventListener('click', async function() {
+            // Get all the necessary values
+            const amount = document.getElementById('amountInput').value.replace(/,/g, '');
+            const isAnonymous = document.querySelector('.anonymous-option input[type="checkbox"]').checked;
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+            const transactionId = Math.random().toString(36).substr(2, 9) + Date.now().toString().substr(-4);
+            
+            try {
+                // Send donation data to server
+                const response = await fetch('../backend/save_donation.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        campaign_name: 'Test Fundraiser',
+                        donation_amount: amount,
+                        transaction_id: transactionId,
+                        campaign_organizer: 'LeBron James',
+                        payment_method: paymentMethod,
+                        is_anonymous: isAnonymous
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Update receipt details
+                    const formattedAmount = parseFloat(amount).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    document.getElementById('receiptAmount').textContent = `₱ ${formattedAmount}`;
+                    document.getElementById('donationDate').textContent = new Date().toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    document.getElementById('transactionId').textContent = transactionId;
+
+                    // Show the popup
+                    document.getElementById('donationReceiptPopup').classList.add('active');
+                } else {
+                    alert('Error saving donation. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error processing donation. Please try again.');
+            }
+        });
+    </script>
+
+    <style>
+        /* Donation Receipt Popup Styles */
+        .donation-receipt-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .donation-receipt-popup.active {
+            display: flex;
+        }
+
+        .receipt-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .receipt-logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .receipt-content h2 {
+            color: #117864;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .donor-info {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .donor-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .donation-details {
+            background: rgba(17, 120, 100, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .donation-details h3 {
+            color: #117864;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(17, 120, 100, 0.2);
+            color: #117864;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .organizer-message {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+        }
+
+        .organizer-message h3 {
+            color: #117864;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .organizer-message p {
+            font-style: italic;
+            color: #666;
+        }
+
+        .receipt-footer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .continue-btn, .view-history-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .continue-btn {
+            background: #117864;
+            color: white;
+        }
+
+        .continue-btn:hover {
+            background: #0d5c4d;
+            transform: translateY(-2px);
+        }
+
+        .view-history-btn {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .view-history-btn:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .receipt-note {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</body>
+</html> 
